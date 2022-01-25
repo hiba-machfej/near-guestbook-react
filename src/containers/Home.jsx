@@ -1,18 +1,13 @@
-import logo from '../logo.svg';
 import '../App.css';
+import { getMessages, addMessage } from '../services/near';
+import Messages from '../components/Messages';
+import Form from '../components/Form';
 
 const Home = () => {
   return (
-    <div>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <div className="max-w-7xl mx-auto">
+      <Form addMessage={addMessage} />
+      <Messages getMessages={getMessages} />
     </div>
   );
 };
